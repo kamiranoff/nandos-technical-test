@@ -8,13 +8,13 @@ enum RESTAURANT_API_URLS {
 
 export const useFetchRestaurants = () => {
   const [restaurants, setRestaurants] = useState<RestaurantPayload[]>([]);
+
   useEffect(() => {
     const getRestaurants = async () => {
       try {
         const response = await HttpClient.get<RestaurantListPayload>(
           RESTAURANT_API_URLS.list,
         );
-        console.log('response', response);
         if (response) {
           setRestaurants(response.data.restaurant.items);
         }

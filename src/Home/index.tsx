@@ -3,9 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import Header from './Header';
 import RestaurantList from './RestaurantList';
 
-export interface HomeProps {}
-
-const Home: FC<HomeProps> = ({}) => (
+const Home: FC = () => (
   <View style={styles.container}>
     <Header />
     <RestaurantList />

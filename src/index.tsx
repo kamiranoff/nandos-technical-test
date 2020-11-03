@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native';
 import Home from './Home';
 
 const App = () => (
-  <SafeAreaView>
+  <SafeAreaView style={{ flex: 1 }}>
     <Home />
   </SafeAreaView>
 );

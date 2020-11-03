@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export interface HeaderProps {}
-
-const Header: FC<HeaderProps> = ({}) => (
+const Header: FC = ({}) => (
   <View style={styles.container}>
     <Text style={styles.text}>Nando's top UK restaurants</Text>
   </View>
