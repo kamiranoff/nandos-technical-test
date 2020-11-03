@@ -3,10 +3,7 @@ import { FlatList, Linking, Platform, StyleSheet } from 'react-native';
 import RestaurantListItem from './RestaurantListItem';
 import { useFetchRestaurants } from './useFetchRestaurants';
 
-export interface RestaurantListProps {
-}
-
-const RestaurantList: FC<RestaurantListProps> = ({}) => {
+const RestaurantList: FC = ({}) => {
   const [restaurants] = useFetchRestaurants();
 
   const handlePress = async (url: string) => {
@@ -18,14 +15,13 @@ const RestaurantList: FC<RestaurantListProps> = ({}) => {
     }
   };
 
-  console.log(restaurants);
   return (
     <FlatList
       data={restaurants}
       contentContainerStyle={styles.contentContainer}
-      renderItem={({ item, index }) => (
+      keyExtractor={(item, index) => `${item.name}-${index}`}
+      renderItem={({ item }) => (
         <RestaurantListItem
-          key={`${item.name}-${index}`}
           title={item.name}
           url={item.url}
           address={item.geo.address}
